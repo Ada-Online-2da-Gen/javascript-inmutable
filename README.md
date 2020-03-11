@@ -103,6 +103,33 @@ user // { firstname: 'Ada', lastname: 'Lovelace' }
 
 ## Array
 
+### Clonar array (slice)
+
+```js
+const original = [0, 1, 2, 3, 4]
+const copy = [...original]
+
+original // [0, 1, 2, 3, 4]
+copy // [0, 1, 2, 3, 4]
+original === copy // false
+```
+
+### Concatenar arrays (concat)
+
+```js
+const arr1 = [0, 1, 2]
+const arr2 = [3, 4, 5]
+const arr3 = [6, 7, 8]
+
+const mergedArr = [
+  ...arr1,
+  ...arr2,
+  ...arr3,
+]
+
+mergedArr // [0, 1, 2, 3, 4, 5, 6, 7, 8]
+```
+
 ### Agregar item(s) al final (push)
 
 ```js
@@ -171,20 +198,21 @@ updatedNumbers // [0, 1, 2, 3, 4, 5]
 numbers // [0, 1, 4, 5]
 ```
 
-### Concatenar arrays (concat)
+### Reemplazar elementos (splice) 
 
 ```js
-const arr1 = [0, 1, 2]
-const arr2 = [3, 4, 5]
-const arr3 = [6, 7, 8]
+const numbers = [0, 1, 2, 3, 4, 5, 6]
+const indexToReplace = 3
+const itemsToReplace = ["three", "four", "five"]
 
-const mergedArr = [
-  ...arr1,
-  ...arr2,
-  ...arr3,
+const updatedNumbers = [
+  ...numbers.slice(0, indexToReplace),
+  ...itemsToReplace,
+  ...numbers.slice(indexToReplace + itemsToReplace.length),
 ]
 
-mergedArr // [0, 1, 2, 3, 4, 5, 6, 7, 8]
+updatedNumbers // [0, 1, 2, "three", "four", "five", 6]
+numbers // [0, 1, 2, 3, 4, 5, 6]
 ```
 
 ### Remover item(s) al principio (shift)
@@ -221,21 +249,4 @@ const updatedNumbers = [
 
 updatedNumbers // [0, 1, 2, 4]
 numbers // [0, 1, 2, 3, 4]
-```
-
-### Reemplazar elementos (splice) 
-
-```js
-const numbers = [0, 1, 2, 3, 4, 5, 6]
-const itemsToReplace = 3
-const itemsToReplace = ["three", "four", "five"]
-
-const updatedNumbers = [
-  ...numbers.slice(0, itemsToReplace),
-  ...itemsToReplace,
-  ...numbers.slice(itemsToReplace + itemsToReplace.lenght),
-]
-
-updatedNumbers // [0, 1, 2, "three", "four", "five", 6]
-numbers // [0, 1, 2, 3, 4, 5, 6]
 ```
