@@ -1,3 +1,7 @@
+# Operaciones inmutables
+
+Haciendo uso del operador `spread` y la destructuración, podemos operar de forma *inmutable* con arrays y objetos, es decir, creando copias con el resultado esperado sin modificar el original.
+
 ## Object
 
 ### Clonar objetos
