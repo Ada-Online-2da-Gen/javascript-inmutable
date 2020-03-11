@@ -222,3 +222,20 @@ const updatedNumbers = [
 updatedNumbers // [0, 1, 2, 4]
 numbers // [0, 1, 2, 3, 4]
 ```
+
+### Reemplazar elementos (splice) 
+
+```js
+const numbers = [0, 1, 2, 3, 4, 5, 6]
+const itemsToReplace = 3
+const itemsToReplace = ["three", "four", "five"]
+
+const updatedNumbers = [
+  ...numbers.slice(0, itemsToReplace),
+  ...itemsToReplace,
+  ...numbers.slice(itemsToReplace + itemsToReplace.lenght),
+]
+
+updatedNumbers // [0, 1, 2, "three", "four", "five", 6]
+numbers // [0, 1, 2, 3, 4, 5, 6]
+```
