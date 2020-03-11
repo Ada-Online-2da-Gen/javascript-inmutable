@@ -53,7 +53,7 @@ user // { firstname: 'Ada', lastname: 'Lovelace', email: 'adalovelace@gmail.com'
 ### Actualizar propiedades
 
 ```js
-const oldUser = { 
+const user = { 
   firstname: 'Ada', 
   lastname: 'Lovelace', 
   email: 'adalovelace2002@yahoo.com' 
@@ -62,6 +62,25 @@ const oldUser = {
 const updatedUser = {
   ...oldUser,
   email: 'adalovelace@gmail.com'
+}
+
+updatedUser // { firstname: 'Ada', lastname: 'Lovelace', email: 'adalovelace@gmail.com' }
+```
+
+O también
+
+```js
+const user = { 
+  firstname: 'Ada', 
+  lastname: 'Lovelace', 
+  email: 'adalovelace2002@yahoo.com' 
+}
+
+const newEmail = { email: 'adalovelace@gmail.com' } 
+
+const updatedUser = {
+  ...oldUser,
+  ...newEmail
 }
 
 updatedUser // { firstname: 'Ada', lastname: 'Lovelace', email: 'adalovelace@gmail.com' }
@@ -127,6 +146,24 @@ const updatedNumbers = [
   2,
   3,
   4,
+  ...numbers.slice(indexToAdd + 1)
+]
+
+updatedNumbers // [0, 1, 2, 3, 4, 5]
+numbers // [0, 1, 4, 5]
+```
+
+O también
+
+```js
+const numbers = [0, 1, 4, 5]
+
+const indexToAdd = 2
+const numbersToAdd = [2, 3, 4] 
+
+const updatedNumbers = [
+  ...numbers.slice(0, indexToAdd),
+  ...numbersToAdd
   ...numbers.slice(indexToAdd + 1)
 ]
 
