@@ -239,7 +239,7 @@ const updatedNumbers = [
   ...numbers.slice(0, numbers.length - indexToRemove),
 ]
 
-updatedNumbers // [0, 1, 2, 3]
+updatedNumbers // [0, 1, 2]
 numbers // [0, 1, 2, 3, 4, 5]
 ```
 
