@@ -233,9 +233,13 @@ numbers // [0, 1, 2, 3, 4, 5]
 
 ```js
 const numbers = [0, 1, 2, 3, 4, 5]
-const [...others, last] = numbers
+const indexToRemove = 3
 
-others // [0, 1, 2, 3, 4]
+const updatedNumbers = [
+  ...numbers.slice(indexToRemove, indexToRemove),
+]
+
+updatedNumbers // [0, 1, 2, 3]
 numbers // [0, 1, 2, 3, 4, 5]
 ```
 
