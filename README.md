@@ -1,6 +1,6 @@
 # Operaciones inmutables
 
-Haciendo uso del operador `spread` y la destructuración, podemos operar de forma *inmutable* con arrays y objetos, es decir, creando copias con el resultado esperado sin modificar el original.
+Haciendo uso del operador `spread`, del operador `rest` y la destructuración, podemos operar de forma *inmutable* con arrays y objetos, es decir, creando copias con el resultado esperado sin modificar el original.
 
 ## Object
 
