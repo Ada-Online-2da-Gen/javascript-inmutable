@@ -2,7 +2,7 @@
 
 Haciendo uso del operador `spread`, del operador `rest` y la destructuración, podemos operar de forma *inmutable* con arrays y objetos, es decir, creando copias con el resultado esperado sin modificar el original.
 
-## Object
+## Objetos
 
 ### Clonar objetos
 
@@ -16,6 +16,23 @@ const newUser = { ...user }
 
 newUser // { firstname: 'Ada', lastname: 'Lovelace' }
 user === newUser // false
+```
+
+### Clonar objetos anidados
+
+```js
+const user = {
+  fullname: {
+    firstname: 'Ada', 
+    lastname: 'Lovelace'
+  } 
+}
+
+const newUser = { 
+  fullname: {
+    ...user.fullname
+  }
+}
 ```
 
 ### Unir objetos
