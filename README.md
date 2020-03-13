@@ -236,7 +236,7 @@ const numbers = [0, 1, 2, 3, 4, 5]
 const indexToRemove = 3
 
 const updatedNumbers = [
-  ...numbers.slice(indexToRemove, indexToRemove),
+  ...numbers.slice(0, numbers.length - indexToRemove),
 ]
 
 updatedNumbers // [0, 1, 2, 3]
